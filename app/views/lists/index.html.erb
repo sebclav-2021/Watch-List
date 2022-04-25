@@ -1,8 +1,9 @@
 <h1>My lists</h1>
 <ul><% @lists.each do |list| %>
-    <%= link_to list.name, list_path(list) %>
-    <%= link_to "Detail", list_path(list) %>
+    <p><%= link_to list.name, list_path(list) %></p>
+    <p><%= link_to "Update a movie list", edit_list_path(list) %>
+        <%= link_to "Delete a movie list", list_path(list), method: :delete %></p>
     <% end %>
 </ul>
 
-<h2><%= Create a movie style %> </h2>
+<p> <%= link_to "Create a movie list", new_list_path %> </p>
