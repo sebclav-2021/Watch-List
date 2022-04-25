@@ -5,6 +5,8 @@ class ListsController < ApplicationController
 
   def show
     @list = List.find(params[:id])
+    @bookmarks = Bookmark.all
+    @movies = Movie.all
   end
 
   def new
@@ -29,7 +31,7 @@ class ListsController < ApplicationController
     if @list.update(list_params)
       redirect_to lists_path
     else
-      render "edit" # ou :new
+      render "edit" # ou :edit
     end
   end
 
